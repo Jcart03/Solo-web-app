@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: system-ui;
+    line-height: 1.6;
+}
+
+p {
+    max-width: 90ch;
+}
+
+header, footer {
+    display: flow-root;
+    color: #eee;
+    background: linear-gradient(#333, #555);
+}
+
+main {
+    section {
+        padding-block: 1rem;
+        &:nth-child(even) {
+            background: linear-gradient(#bbb, #ccc);
+        }
+    }
+
+    table {
+        border: 3px solid black;
+        border-collapse: collapse;
+        td, th {
+            padding: 0.5rem;
+            border: 0.5px solid black;
+
+        }
+    }
+}
+
+blockquote {
+    border: 1px solid #aaa;
+    padding-inline: 1rem;
+    backdrop-filter: brightness(0.9);
+}
+
+header, footer, main > section {
+    padding-inline: 1rem;
+}
+
+@media (width > 500px) {
+header,
+    footer,
+    main>section {
+        padding-inline: 3rem;
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name": "p2718293/solo_web_dev_2025",
+    "description":"Slim project for CTEC3705 assignment, setup with PSR-4 autoloading",
+    "autoload": {
+        "psr-4": {
+            "P2718293\\SoloWebDev2025\\": "src/"
+        }
+    },
+    "require": {
+        "slim/slim": "^4.0",
+        "slim/psr7": "^1.7",
+        "slim/twig-view": "^3.4"
+    }
+}

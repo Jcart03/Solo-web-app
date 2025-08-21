@@ -1,0 +1,28 @@
+{%extends 'layout.html.twig'%}
+
+{% block title %}{{ programme.summary.name }} Details{% endblock %}
+
+{%block content%}
+
+<h2>{{ programme.summary.name }} (Level {{programme.summary.level}}) </h2>
+<p>{{ programme.summary.description }}</p>
+<h3>Modules:</h3>
+<ul>
+    {% for module in programme.modules %}
+        <li>
+            <strong>{{ module.title }}</strong> - Year {{ module.year }}
+            {% if module.shared %}<em>(Shared)</em>{% endif %}
+            <br>
+            <small>Staff:
+                {% for staff in module.staff%}
+                    {{ staff.name}}{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            </small>
+            <br>
+            <a href = "/interest?programmeId={{ programme.summary.id }}&moduleId={{ module.id }}"> 
+                Register Interest
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock%}

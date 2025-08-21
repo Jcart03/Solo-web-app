@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Our Programmes{% endblock %}
+
+{% block content %}
+<h2>Available Programmes</h2>
+
+
+{% for programme in programmes %}
+    <div class= "programme-summary">
+        <h3>{{ programme.name }} (Level {{ programme.level }})</h3>
+        <p>{{ programme.description }}</p>
+        <a href="/programme/{{ programme.id }}">View Details</a>
+    </div>
+{% endfor %}
+{% endblock %}

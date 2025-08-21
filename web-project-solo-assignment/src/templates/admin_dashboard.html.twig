@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<h2>Submitted Interests</h2>
+
+{% if interests is empty %}
+    <p>No interests have been submitted yet.</p>
+{% else %}
+    <table>
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Programme ID</th>
+                <th>Submitted At</th>
+            </tr>
+        </thread>
+        <tbody>
+            {% for interest in interests %}
+                <tr>
+                    <td>{{ interest.email }}</td>
+                    <td>{{ interest.programmeId }}</td>
+                    <td>{{ interest.createdAt|date("Y-m-d H:i") }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+{% endblock %}
